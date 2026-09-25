@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,17 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { complex64ndarray, float32ndarray } from '@stdlib/types/ndarray';
 
 /**
-* BLAS level 1 routine to multiply a one-dimensional single-precision complex floating-point ndarray by a single-precision floating-point scalar constant.
+* Multiplies a one-dimensional single-precision complex floating-point ndarray by a single-precision floating-point scalar constant.
 *
-* @module @stdlib/blas-base-ndarray-csscal
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a zero-dimensional ndarray containing a scalar constant.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns input ndarray
 *
 * @example
 * var Complex64Vector = require( '@stdlib/ndarray-vector-complex64' );
 * var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
-* var csscal = require( '@stdlib/blas-base-ndarray-csscal' );
 *
 * var x = new Complex64Vector( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ] );
 *
@@ -40,12 +51,9 @@
 * var bool = ( y === x );
 * // returns true
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function csscal( arrays: [ complex64ndarray, float32ndarray ] ): complex64ndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = csscal;
